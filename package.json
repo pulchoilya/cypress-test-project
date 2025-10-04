@@ -1,0 +1,24 @@
+{
+  "name": "cypress-test-project",
+  "version": "1.0.0",
+  "description": "Learning cypress",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pulchoilya/cypress-test-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pulchoilya/cypress-test-project/issues"
+  },
+  "homepage": "https://github.com/pulchoilya/cypress-test-project#readme",
+  "devDependencies": {
+    "cypress": "^15.3.0"
+  }
+}
