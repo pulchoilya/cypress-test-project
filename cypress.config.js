@@ -2,6 +2,11 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
+    baseUrl: 'https://qauto.forstudy.space',
+    env: {
+      authUser: 'guest',
+      authPass: 'welcome2qauto',
+    },
     viewportHeight: 768,
     viewportWidth: 1366,
     video: true,
