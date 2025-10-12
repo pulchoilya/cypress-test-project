@@ -1,15 +1,14 @@
 /// <reference types="cypress" />
 
 describe('Search Sign Up button and Footer', () => {
-
-beforeEach(() => {
-  cy.visit('/', {
-    auth: { 
-      username: Cypress.env('authUser'),
-      password: Cypress.env('authPass'),
-    },
+  beforeEach(() => {
+    cy.visit('/', {
+      auth: {
+        username: Cypress.env('authUser'),
+        password: Cypress.env('authPass'),
+      },
+    });
   });
-});
 
   it('Find "Sign Up" button by class', () => {
     // Search by class
@@ -17,10 +16,8 @@ beforeEach(() => {
   });
 
   it('Check footer elements using different selector types', () => {
-
     // Search by multiple classes
-    cy.get('.contacts_link.display-4')
-      .should('have.attr', 'href', 'https://ithillel.ua');
+    cy.get('.contacts_link.display-4').should('have.attr', 'href', 'https://ithillel.ua');
 
     // Search by class
     cy.get('.contacts_link.h4');
