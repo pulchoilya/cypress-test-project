@@ -26,7 +26,6 @@
 
 Cypress.Commands.overwrite('type', (originalFn, element, text, options = {}) => {
   if (options.sensitive) {
-
     options.log = false;
 
     Cypress.log({

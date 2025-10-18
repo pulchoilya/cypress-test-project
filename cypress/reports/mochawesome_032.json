@@ -1,0 +1,220 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-18T19:04:11.886Z",
+    "end": "2025-10-18T19:04:42.215Z",
+    "duration": 30329,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b4e80345-428c-4950-889c-cbc848045a7c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\qauto-ls-21.cy.js",
+      "file": "cypress\\e2e\\qauto-ls-21.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "63cf64aa-ffd0-44a1-ae2c-b28fc1c6157d",
+          "title": "Registration and Login tests for QAuto1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registration user - Element-oriented POM",
+              "fullTitle": "Registration and Login tests for QAuto1 Registration user - Element-oriented POM",
+              "timedOut": null,
+              "duration": 3721,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registrationPage.openRegistrationModal();\nregistrationPage.firstNameInput.clear().type(userData1.firstName).should('have.value', userData1.firstName);\nregistrationPage.lastNameInput.clear().type(userData1.lastName).should('have.value', userData1.lastName);\nregistrationPage.emailInput.clear().type(userData1.email).should('have.value', userData1.email);\nregistrationPage.passwordInput.clear().type(userData1.password, {\n  sensitive: true\n});\nregistrationPage.repeatPasswordInput.clear().type(userData1.password, {\n  sensitive: true\n});\nregistrationPage.registerButton.click();",
+              "err": {},
+              "uuid": "7d3bdf50-2e9b-4107-a597-2642df01ad5b",
+              "parentUUID": "63cf64aa-ffd0-44a1-ae2c-b28fc1c6157d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login user - Element-oriented POM",
+              "fullTitle": "Registration and Login tests for QAuto1 Login user - Element-oriented POM",
+              "timedOut": null,
+              "duration": 2768,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "signIn.openLogInModal();\nsignIn.emailInput.clear().type(email).should('have.value', email);\nsignIn.passwordInput.clear().type(password).invoke('val').then(val => expect(val).to.eq(password));\nsignIn.submitLoginButton.click();\nsignIn.alert.should('be.visible').and('contain.text', 'You have been successfully logged in');\nsignIn.garageUrl;\nsignIn.profileDropdown.click();\nsignIn.logoutOption.click();",
+              "err": {},
+              "uuid": "e6098104-b59e-441b-9b42-e5a619348ddc",
+              "parentUUID": "63cf64aa-ffd0-44a1-ae2c-b28fc1c6157d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add car and fuel - Element-oriented POM",
+              "fullTitle": "Registration and Login tests for QAuto1 Add car and fuel - Element-oriented POM",
+              "timedOut": null,
+              "duration": 5636,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "signIn.openLogInModal();\nsignIn.emailInput.clear().type(email).should('have.value', email);\nsignIn.passwordInput.clear().type(password).invoke('val').then(val => expect(val).to.eq(password));\nsignIn.submitLoginButton.click();\naddCar.garageUrl;\naddCar.addCarButton.click();\naddCar.header.should('have.text', 'Add a car');\naddCar.addCarBrand.select('BMW').should('have.value', '1: 2');\naddCar.addCarModel.select('X5').should('have.value', '7: 8');\naddCar.addCarMileage.type('5500').should('have.value', '5500');\naddCar.addButton.click();\naddCar.checkAddedCar.should('have.text', 'BMW X5');\naddCar.addFuelButton.click();\naddCar.fuelHeader.should('have.text', 'Add an expense');\naddCar.expenseCar.find('option:selected').should('have.text', 'BMW X5');\naddCar.expenseDate.clear().type(addCar.getTodayDate()).should('have.value', addCar.getTodayDate());\naddCar.expenseMileage.clear().type('20000').should('have.value', '20000');\naddCar.expenseLiters.clear().type('80').should('have.value', '80');\naddCar.expenseTotalCost.clear().type('9000').should('have.value', '9000');\naddCar.submitFuelButton.contains('Add').click();",
+              "err": {},
+              "uuid": "f40fa503-cbfd-4fb9-a04a-6d3ed9161bbe",
+              "parentUUID": "63cf64aa-ffd0-44a1-ae2c-b28fc1c6157d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7d3bdf50-2e9b-4107-a597-2642df01ad5b",
+            "e6098104-b59e-441b-9b42-e5a619348ddc",
+            "f40fa503-cbfd-4fb9-a04a-6d3ed9161bbe"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12125,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "8a50771e-fe01-4068-9837-edce28e2472e",
+          "title": "Registration and Login tests for QAuto2",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registration user2 - Methodological POM",
+              "fullTitle": "Registration and Login tests for QAuto2 Registration user2 - Methodological POM",
+              "timedOut": null,
+              "duration": 4778,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "RegistrationPage2.openRegistrationModal().typeFirstName(userData2.firstName).typeLastName(userData2.lastName).typeEmail(userData2.email).typePassword(userData2.password).clickRegisterButton();",
+              "err": {},
+              "uuid": "74139de3-1696-43a6-8b40-845267d45480",
+              "parentUUID": "8a50771e-fe01-4068-9837-edce28e2472e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login user2 - Methodological POM",
+              "fullTitle": "Registration and Login tests for QAuto2 Login user2 - Methodological POM",
+              "timedOut": null,
+              "duration": 3419,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "signInMethodological.openLoginModalMeth().typeEmail(userData2.email).typePassword(userData2.password).clickLogIn().verifyAlert('You have been successfully logged in').clickProfileDropdown().clickLogout();",
+              "err": {},
+              "uuid": "ca61ba7e-6565-4723-b359-17b194305ae0",
+              "parentUUID": "8a50771e-fe01-4068-9837-edce28e2472e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add car and fuel - Methodological POM",
+              "fullTitle": "Registration and Login tests for QAuto2 Add car and fuel - Methodological POM",
+              "timedOut": null,
+              "duration": 5897,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "signInMethodological.openLoginModalMeth().typeEmail(userData2.email).typePassword(userData2.password).clickLogIn();\naddCarMeth.verifyGarageUrl().openAddCarModal().fillCarForm('BMW', 'X5', '5500').submitAddCar().openAddFuelModal().fillFuelForm('20000', '80', '9000').submitAddFuel();",
+              "err": {},
+              "uuid": "513adfc3-eab7-4f78-8485-9a0413b31038",
+              "parentUUID": "8a50771e-fe01-4068-9837-edce28e2472e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "74139de3-1696-43a6-8b40-845267d45480",
+            "ca61ba7e-6565-4723-b359-17b194305ae0",
+            "513adfc3-eab7-4f78-8485-9a0413b31038"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14094,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

@@ -205,10 +205,9 @@ describe('Registration and Login tests', () => {
     cy.get('#signupName').should('not.have.css', 'border-color', 'rgb(220, 53, 69)');
 
     cy.contains('button', 'Register').should('not.be.disabled');
-
   });
 
-  // === Lats Name field tests === 
+  // === Lats Name field tests ===
   it('Checking validation "Lats Name" Wrong length - "Last name has to be from 2 to 20 characters long"', () => {
     cy.url().should('include', 'qauto.forstudy.space');
     cy.contains('button', 'Sign up').click();
@@ -326,7 +325,7 @@ describe('Registration and Login tests', () => {
     cy.contains('button', 'Register').should('not.be.disabled');
   });
 
-  // === Email field tests === 
+  // === Email field tests ===
   it('Checking validation "Email" For empty field - "Email required"', () => {
     cy.url().should('include', 'qauto.forstudy.space');
 
@@ -442,7 +441,6 @@ describe('Registration and Login tests', () => {
     cy.get('[formcontrolname="email"]').should('not.have.css', 'border-color', 'rgb(220, 53, 69)');
 
     cy.contains('button', 'Register').should('not.be.disabled');
-
   });
 
   // === Password field tests ===
@@ -521,7 +519,7 @@ describe('Registration and Login tests', () => {
     cy.contains('button', 'Register').should('be.disabled');
   });
 
-  // === Re-enter password field tests === 
+  // === Re-enter password field tests ===
   it('Checking validation "Re-enter password" For empty field error - "Re-enter password required"', () => {
     cy.url().should('include', 'qauto.forstudy.space');
     cy.contains('button', 'Sign up').click();

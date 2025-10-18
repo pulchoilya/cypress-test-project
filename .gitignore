@@ -1,0 +1,24 @@
+node_modules/
+package-lock.json
+package.json
+
+
+# Build artifacts
+build/
+coverage/
+
+# VS Code history files
+.history/
+
+# Optional: other temporary files
+*.log
+*.tmp
+
+# ===== Cypress =====
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+mochawesome-report/
+mochawesome.json
+reports/
+cypress/reports/
