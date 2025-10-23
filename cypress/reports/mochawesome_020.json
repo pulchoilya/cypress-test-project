@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-17T21:05:23.496Z",
+    "end": "2025-10-17T21:05:46.293Z",
+    "duration": 22797,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9a17780e-ad41-418b-b557-6f96482f58d9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\qauto-ls-21.cy.js",
+      "file": "cypress\\e2e\\qauto-ls-21.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e8e5254d-b060-4445-914e-f2f0679986bc",
+          "title": "Registration and Login tests for QAuto1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registration user - Element-oriented POM",
+              "fullTitle": "Registration and Login tests for QAuto1 Registration user - Element-oriented POM",
+              "timedOut": null,
+              "duration": 4694,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registrationPage.openRegistrationModal();\nregistrationPage.firstNameInput.clear().type(userData1.firstName).should('have.value', userData1.firstName);\nregistrationPage.lastNameInput.clear().type(userData1.lastName).should('have.value', userData1.lastName);\nregistrationPage.emailInput.clear().type(userData1.email).should('have.value', userData1.email);\nregistrationPage.passwordInput.clear().type(userData1.password, {\n  sensitive: true\n});\nregistrationPage.repeatPasswordInput.clear().type(userData1.password, {\n  sensitive: true\n});\nregistrationPage.registerButton.click();",
+              "err": {},
+              "uuid": "0b119809-8091-46fa-b2a9-dbdf439f09d2",
+              "parentUUID": "e8e5254d-b060-4445-914e-f2f0679986bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login user - Element-oriented POM",
+              "fullTitle": "Registration and Login tests for QAuto1 Login user - Element-oriented POM",
+              "timedOut": null,
+              "duration": 2494,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "signIn.openLogInModal();\nsignIn.emailInput.clear().type(email).should('have.value', email);\nsignIn.passwordInput.clear().type(password).invoke('val').then(val => expect(val).to.eq(password));\nsignIn.submitLoginButton.click();\nsignIn.alert.should('be.visible').and('contain.text', 'You have been successfully logged in');\ncy.url().should('include', '/garage');\nsignIn.profileDropdown.click();\nsignIn.logoutOption.click();",
+              "err": {},
+              "uuid": "69e93c3e-ee8f-4169-8cc6-d6fa1acebffe",
+              "parentUUID": "e8e5254d-b060-4445-914e-f2f0679986bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Homework ",
+              "fullTitle": "Registration and Login tests for QAuto1 Homework ",
+              "timedOut": null,
+              "duration": 4783,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header_right > .btn').click();\ncy.contains('.modal-header', 'Log in');\ncy.get('#signinEmail').clear().type(email).should('have.value', email);\ncy.get('#signinPassword').clear().type(password).invoke('val').then(val => {\n  expect(val).to.eq(password);\n});\ncy.contains('button', 'Login').click();\ncy.url().should('include', '/garage');\ncy.contains('button', 'Add car').click();\ncy.get('h4').should('have.text', 'Add a car');\ncy.get('#addCarBrand').select('BMW').should('have.value', '1: 2');\ncy.get('#addCarModel').select('X5').should('have.value', '7: 8');\ncy.get('#addCarMileage').type('5500').should('have.value', '5500');\ncy.get('.modal-footer > .btn-primary').should('be.visible').click();\ncy.get('p.car_name.h2').should('have.text', 'BMW X5');\ncy.contains('button', 'Add fuel expense').click();\ncy.get('h4').should('have.text', 'Add an expense');\ncy.get('#addExpenseCar').find('option:selected').should('have.text', 'BMW X5');\ncy.get('#addExpenseDate').clear().type('17.10.2025').should('have.value', '17.10.2025');\ncy.get('#addExpenseMileage').clear().type('20000').should('have.value', '20000');\ncy.get('#addExpenseLiters').clear().type('80').should('have.value', '80');\ncy.get('#addExpenseTotalCost').clear().type('9000').should('have.value', '9000');\ncy.get('.modal-footer').within(() => {\n  cy.get('button.btn-primary').contains('Add').click();\n});",
+              "err": {},
+              "uuid": "fdfa65ec-e29a-4a48-83c8-1105f90c9655",
+              "parentUUID": "e8e5254d-b060-4445-914e-f2f0679986bc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0b119809-8091-46fa-b2a9-dbdf439f09d2",
+            "69e93c3e-ee8f-4169-8cc6-d6fa1acebffe",
+            "fdfa65ec-e29a-4a48-83c8-1105f90c9655"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11971,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e1f78355-d51d-4b30-a12b-532e90ba22c1",
+          "title": "Registration and Login tests for QAuto2",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registration user2 - Methodological POM",
+              "fullTitle": "Registration and Login tests for QAuto2 Registration user2 - Methodological POM",
+              "timedOut": null,
+              "duration": 3436,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "RegistrationPage2.openRegistrationModal().typeFirstName(userData2.firstName).typeLastName(userData2.lastName).typeEmail(userData2.email).typePassword(userData2.password).clickRegisterButton();",
+              "err": {},
+              "uuid": "63d4c365-3e2a-4ed8-8482-4cceffeb567b",
+              "parentUUID": "e1f78355-d51d-4b30-a12b-532e90ba22c1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login user2 - Methodological POM",
+              "fullTitle": "Registration and Login tests for QAuto2 Login user2 - Methodological POM",
+              "timedOut": null,
+              "duration": 2476,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "signInMethodological.openLoginModalMeth().typeEmail(userData2.email).typePassword(userData2.password).clickLogIn().verifyAlert('You have been successfully logged in').clickProfileDropdown().clickLogout();",
+              "err": {},
+              "uuid": "9d1c4a17-a0df-4f04-a24a-fa7f377f29bd",
+              "parentUUID": "e1f78355-d51d-4b30-a12b-532e90ba22c1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "63d4c365-3e2a-4ed8-8482-4cceffeb567b",
+            "9d1c4a17-a0df-4f04-a24a-fa7f377f29bd"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5912,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

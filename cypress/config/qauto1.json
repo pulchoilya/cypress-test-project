@@ -1,0 +1,11 @@
+{
+  "baseUrl": "https://qauto.forstudy.space",
+  "user": {
+    "login": "guest",
+    "password": "welcome2qauto"
+  },
+  "e2e": {
+    "specPattern": "cypress/e2e/**/*.cy.{js,ts}",
+    "supportFile": "cypress/support/e2e.js"
+  }
+}

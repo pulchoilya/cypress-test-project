@@ -1,0 +1,204 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-10-17T20:39:27.212Z",
+    "end": "2025-10-17T20:39:56.947Z",
+    "duration": 29735,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a4a8f887-ae3d-4369-9319-56b22cee5ce1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\qauto-ls-21.cy.js",
+      "file": "cypress\\e2e\\qauto-ls-21.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9e2d0704-0284-4290-9be3-647573cae2cf",
+          "title": "Registration and Login tests for QAuto1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registration user - Element-oriented POM",
+              "fullTitle": "Registration and Login tests for QAuto1 Registration user - Element-oriented POM",
+              "timedOut": null,
+              "duration": 4859,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "registrationPage.openRegistrationModal();\nregistrationPage.firstNameInput.clear().type(userData1.firstName).should('have.value', userData1.firstName);\nregistrationPage.lastNameInput.clear().type(userData1.lastName).should('have.value', userData1.lastName);\nregistrationPage.emailInput.clear().type(userData1.email).should('have.value', userData1.email);\nregistrationPage.passwordInput.clear().type(userData1.password, {\n  sensitive: true\n});\nregistrationPage.repeatPasswordInput.clear().type(userData1.password, {\n  sensitive: true\n});\nregistrationPage.registerButton.click();",
+              "err": {},
+              "uuid": "914f9f75-3432-439e-af56-910e866ff385",
+              "parentUUID": "9e2d0704-0284-4290-9be3-647573cae2cf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login user - Element-oriented POM",
+              "fullTitle": "Registration and Login tests for QAuto1 Login user - Element-oriented POM",
+              "timedOut": null,
+              "duration": 2577,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "signIn.openLogInModal();\nsignIn.emailInput.clear().type(email).should('have.value', email);\nsignIn.passwordInput.clear().type(password).invoke('val').then(val => expect(val).to.eq(password));\nsignIn.submitLoginButton.click();\nsignIn.alert.should('be.visible').and('contain.text', 'You have been successfully logged in');\ncy.url().should('include', '/garage');\nsignIn.profileDropdown.click();\nsignIn.logoutOption.click();",
+              "err": {},
+              "uuid": "d6c826e5-0246-4147-9d5f-441613b82b58",
+              "parentUUID": "9e2d0704-0284-4290-9be3-647573cae2cf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Homework ",
+              "fullTitle": "Registration and Login tests for QAuto1 Homework ",
+              "timedOut": null,
+              "duration": 5003,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.header_right > .btn').click();\ncy.contains('.modal-header', 'Log in');\ncy.get('#signinEmail').clear().type(email).should('have.value', email);\ncy.get('#signinPassword').clear().type(password).invoke('val').then(val => {\n  expect(val).to.eq(password);\n});\ncy.contains('button', 'Login').click();\ncy.url().should('include', '/garage');\ncy.contains('button', 'Add car').click();\ncy.get('h4').should('have.text', 'Add a car');\ncy.get('#addCarBrand').select('BMW').should('have.value', '1: 2');\ncy.get('#addCarModel').select('X5').should('have.value', '7: 8');\ncy.get('#addCarMileage').type('5500').should('have.value', '5500');\ncy.get('.modal-footer > .btn-primary').should('be.visible').click();\ncy.get('p.car_name.h2').should('have.text', 'BMW X5');\ncy.contains('button', 'Add fuel expense').click();\ncy.get('h4').should('have.text', 'Add an expense');\ncy.get('#addExpenseCar').find('option:selected').should('have.text', 'BMW X5');\ncy.get('#addExpenseDate').clear().type('17.10.2025').should('have.value', '17.10.2025');\ncy.get('#addExpenseMileage').clear().type('20000').should('have.value', '20000');\ncy.get('#addExpenseLiters').clear().type('80').should('have.value', '80');\ncy.get('#addExpenseTotalCost').clear().type('9000').should('have.value', '9000');\ncy.get('.modal-footer').within(() => {\n  cy.get('button.btn-primary').contains('Add').click();\n});",
+              "err": {},
+              "uuid": "c40505b8-ffb8-4641-b185-35125f270e8b",
+              "parentUUID": "9e2d0704-0284-4290-9be3-647573cae2cf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login user2 - Methodological POM",
+              "fullTitle": "Registration and Login tests for QAuto1 Login user2 - Methodological POM",
+              "timedOut": null,
+              "duration": 2414,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "signInMethodological.openLoginModalMeth().typeEmail(email).typePassword(password).clickLogIn().verifyAlert('You have been successfully logged in').clickProfileDropdown().clickLogout();",
+              "err": {},
+              "uuid": "895e7653-d68c-49aa-8730-2f46c2c72e07",
+              "parentUUID": "9e2d0704-0284-4290-9be3-647573cae2cf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "91e09bc2-624f-4746-929f-f5542973a46c",
+              "title": "Registration and Login tests for QAuto2",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Registration user2 - Methodological POM",
+                  "fullTitle": "Registration and Login tests for QAuto1 Registration and Login tests for QAuto2 Registration user2 - Methodological POM",
+                  "timedOut": null,
+                  "duration": 5998,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "RegistrationPage2.openRegistrationModal().typeFirstName(userData2.firstName).typeLastName(userData2.lastName).typeEmail(userData2.email).typePassword(userData2.password).clickRegisterButton();",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 4000ms: The command was expected to run against origin `https://qauto.forstudy.space` but the application is at origin `https://qauto2.forstudy.space`.\n\nThis commonly happens when you have either not navigated to the expected origin or have navigated away unexpectedly.\n\nUsing `cy.origin()` to wrap the commands run on `https://qauto2.forstudy.space` will likely fix this issue.\n\n`cy.origin('https://qauto2.forstudy.space', () => {`\n`  <commands targeting https://qauto2.forstudy.space go here>`\n`})`\n\nhttps://on.cypress.io/cy-visit-succeeded-but-commands-fail",
+                    "estack": "CypressError: Timed out retrying after 4000ms: The command was expected to run against origin `https://qauto.forstudy.space` but the application is at origin `https://qauto2.forstudy.space`.\n\nThis commonly happens when you have either not navigated to the expected origin or have navigated away unexpectedly.\n\nUsing `cy.origin()` to wrap the commands run on `https://qauto2.forstudy.space` will likely fix this issue.\n\n`cy.origin('https://qauto2.forstudy.space', () => {`\n`  <commands targeting https://qauto2.forstudy.space go here>`\n`})`\n\nhttps://on.cypress.io/cy-visit-succeeded-but-commands-fail\n    at cypressErr (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:77732:18)\n    at Object.errByPath (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:77786:10)\n    at Object.commandCanCommunicateWithAUT (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:148540:90)\n    at <unknown> (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:135414:22)\n    at Object.subjectFn (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:147382:16)\n    at $Cy.verifyUpcomingAssertions (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:146710:31)\n    at onRetry (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:147373:15)\n    at tryCatcher (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:147260:68)\n    at <unknown> (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:147201:14)\n    at tryCatcher (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://qauto.forstudy.space/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at get loginButtonHeader (webpack://cypress-test-project/./cypress/e2e/LoginPage-Element-oriented.js:55:38)\n    at RegistrationPage.openRegistrationModal (webpack://cypress-test-project/./cypress/e2e/LoginPage-Element-oriented.js:61:9)\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/qauto-ls-21.cy.js:157:9)",
+                    "diff": null
+                  },
+                  "uuid": "7af5c999-3ab8-4a31-a9d2-71fa94cc575e",
+                  "parentUUID": "91e09bc2-624f-4746-929f-f5542973a46c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": ["7af5c999-3ab8-4a31-a9d2-71fa94cc575e"],
+              "pending": [],
+              "skipped": [],
+              "duration": 5998,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "914f9f75-3432-439e-af56-910e866ff385",
+            "d6c826e5-0246-4147-9d5f-441613b82b58",
+            "c40505b8-ffb8-4641-b185-35125f270e8b",
+            "895e7653-d68c-49aa-8730-2f46c2c72e07"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14853,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

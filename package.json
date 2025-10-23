@@ -4,9 +4,17 @@
   "description": "Learning cypress",
   "main": "index.js",
   "scripts": {
+    "test": "cypress run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "cy:open:qauto1": "cypress open --config-file config/qauto1.json",
+    "cy:open:qauto2": "cypress open --config-file config/qauto2.json",
+    "cy:run:qauto1": "cypress run --config-file config/qauto1.json",
+    "cy:run:qauto2": "cypress run --config-file config/qauto2.json",
+    "merge-reports": "npx mochawesome-merge \"cypress/results/*.json\" > mochawesome.json",
+    "generate-report": "npx marge mochawesome.json",
+    "report": "npm run test && npm run merge-reports && npm run generate-report"
   },
   "repository": {
     "type": "git",
@@ -21,6 +29,9 @@
   "homepage": "https://github.com/pulchoilya/cypress-test-project#readme",
   "devDependencies": {
     "cypress": "^15.3.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.3.0",
     "prettier": "^3.6.2"
   },
   "dependencies": {

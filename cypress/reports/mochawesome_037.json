@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-18T19:13:07.867Z",
+    "end": "2025-10-18T19:13:11.402Z",
+    "duration": 3535,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "74495f93-a57d-41fa-88bc-267fc19e24ca",
+      "title": "",
+      "fullFile": "cypress\\e2e\\qauto-ls-19.cy.js",
+      "file": "cypress\\e2e\\qauto-ls-19.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b4196b2a-1fb7-4689-85cb-9f9e52fac806",
+          "title": "Search Sign Up button and Footer",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Find \"Sign Up\" button by class",
+              "fullTitle": "Search Sign Up button and Footer Find \"Sign Up\" button by class",
+              "timedOut": null,
+              "duration": 2713,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Search by class\ncy.get('.hero-descriptor_btn');",
+              "err": {},
+              "uuid": "ba98a02b-3a2a-411a-bb41-1f40753dcfcf",
+              "parentUUID": "b4196b2a-1fb7-4689-85cb-9f9e52fac806",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check footer elements using different selector types",
+              "fullTitle": "Search Sign Up button and Footer Check footer elements using different selector types",
+              "timedOut": null,
+              "duration": 609,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Search by multiple classes\ncy.get('.contacts_link.display-4').should('have.attr', 'href', 'https://ithillel.ua');\n// Search by class\ncy.get('.contacts_link.h4');\n// Search by element (icon inside link)\ncy.get('.socials_link .icon-facebook');\n// Search by href attribute (exact match)\ncy.get('[href=\"https://t.me/ithillel_kyiv\"]');\n// Search by href attribute (partial match)\ncy.get('[href*=\"www.youtube.com\"]');\n// Search by tag + class + href part\ncy.get('a.socials_link[href*=\"instagram.com\"]');\n// Find the last element via child selector\ncy.get('.socials_link:last-child');",
+              "err": {},
+              "uuid": "46c243e5-dbb2-43cd-a83c-ed0ee974a4c3",
+              "parentUUID": "b4196b2a-1fb7-4689-85cb-9f9e52fac806",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ba98a02b-3a2a-411a-bb41-1f40753dcfcf",
+            "46c243e5-dbb2-43cd-a83c-ed0ee974a4c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3322,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
