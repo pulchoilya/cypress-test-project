@@ -37,3 +37,16 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options = {}) => 
 
   return originalFn(element, text, options);
 });
+
+Cypress.Commands.add('createExpense', (sid, expenseData) => {
+  return cy.request({
+    method: 'POST',
+    url: 'https://qauto.forstudy.space/api/expenses',
+    body: expenseData,
+    headers: {
+      accept: 'application/json',
+      cookie: `sid=${sid}`,
+    },
+    failOnStatusCode: false,
+  });
+});
